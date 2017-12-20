@@ -1,0 +1,12 @@
+{% if latest_article %}
+    <div>
+        <h1>{{latest_article.titre}}</h1>
+        {{latest_article.contenu}}
+    </div>
+
+{% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+{% endif %}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}
